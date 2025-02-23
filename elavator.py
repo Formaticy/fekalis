@@ -5,9 +5,6 @@ class Elevator:
 
     def __init__(self, capacity):
         self.capacity = capacity
-        
-    def manual_up(price = 300):
-        pass
 
     def count_price(self, weight: float) -> int:
         if weight > self.capacity:
@@ -21,6 +18,21 @@ class Elevator:
         else:
             price = 1000
         return price
+    
+    def manual_up(self, weight: float, floor: int) -> int:
+        if weight <= 0:
+            return "Вес должен быть положительным!"
+        if floor <= 0:
+            return "Этаж должен быть положительным!"
+
+        base_price = self.count_price(weight)
+        if isinstance(base_price, str): 
+            return base_price
+        
+        additional_price = 300 * (floor - 1) * (weight // 100 + 1)
+
+        total_price = base_price + additional_price
+        return total_price
 
     def up(price = 300):
         pass
