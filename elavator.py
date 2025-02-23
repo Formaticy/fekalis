@@ -7,5 +7,8 @@ class Elevator:
     def manual_up(price = 300):
         pass
 
-    def revenues():
+    def price():
+        pass
+
+    def up(price = 300):
         pass
