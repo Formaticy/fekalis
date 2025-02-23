@@ -6,7 +6,7 @@ class Elevator:
     def __init__(self, capacity):
         self.capacity = capacity
 
-    def count_price(self, weight: float) -> int:
+    def _count_price(self, weight: float) -> int:
         if weight > self.capacity:
             return "Вес превышает грузоподъемность лифта!"
         if weight <= 0.25 * self.capacity:
@@ -34,5 +34,8 @@ class Elevator:
         total_price = base_price + additional_price
         return total_price
 
-    def up(price = 300):
-        pass
+    def up(self, weight: float):
+        return self._count_price(weight)
+
+a = Elevator(100)
+print(a.up(65))
